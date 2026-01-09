@@ -5,7 +5,7 @@ pipeline {
         K8S_TOKEN_ID = 'k8-token'
         CLUSTER_NAME = 'EKS-1'
         NAMESPACE = 'webapps'
-        K8S_API_URL = 'https://883C2C11426CD902578376CB7DBC9B11.yl4.ap-south-1.eks.amazonaws.com'
+        K8S_API_URL = 'https://A824161849B6E54D63A379C0C36E3D79.gr7.ap-south-1.eks.amazonaws.com'
     }
 
     stages {
