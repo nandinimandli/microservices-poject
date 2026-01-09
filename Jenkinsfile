@@ -9,6 +9,7 @@ pipeline {
     }
 
     stages {
+
         stage('Deploy To Kubernetes') {
             steps {
                 withKubeCredentials(kubectlCredentials: [[
@@ -34,7 +35,11 @@ pipeline {
                     serverUrl: "${K8S_API_URL}",
                     caCertificate: ''
                 ]]) {
-                    sh 'kubectl get all -n ${NAMESPACE}'
+                    sh '''
+                        kubectl get pods -n ${NAMESPACE}
+                        kubectl get svc -n ${NAMESPACE}
+                        kubectl get deploy -n ${NAMESPACE}
+                    '''
                 }
             }
         }
